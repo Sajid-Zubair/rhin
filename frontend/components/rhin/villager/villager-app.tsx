@@ -5,10 +5,16 @@ import { Language } from "@/app/page"
 import { OfflineBanner } from "../offline-banner"
 import { VillagerReportPage } from "./villager-report"
 import { ConfirmPage } from "./confirm-page"
-import { VillageMap } from "./village-map"
+//import  VillageMap  from "./village-map"
 import { Helplines } from "./helplines"
 import { Mic, Map, Phone, LogOut } from "lucide-react"
 import { cn } from "@/lib/utils"
+
+import dynamic from "next/dynamic"
+
+const VillageMap = dynamic(() => import("./village-map"), {
+  ssr: false,
+})
 
 interface VillagerAppProps {
   language: Language
@@ -28,6 +34,8 @@ export interface ReportData {
   advice: string[]
   audioUrl?: string
   transcript?: string
+  lat?: number
+  lon?: number
 }
 
 const navItems = [

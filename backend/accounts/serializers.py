@@ -12,3 +12,16 @@ class SendOTPSerializer(serializers.Serializer):
 class VerifyOTPSerializer(serializers.Serializer):
     phone = serializers.CharField()
     otp = serializers.CharField()
+
+
+
+
+# serializers.py
+
+
+from .models import HealthReport
+
+class HealthReportSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = HealthReport
+        fields = ["latitude", "longitude", "symptoms"]
