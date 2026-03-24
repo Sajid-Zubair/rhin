@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useCallback } from "react"
 import dynamic from "next/dynamic"
-import { Language } from "@/frontend/app/page"
+import { Language } from "@/app/page"
 import { OfflineIndicator } from "../offline-banner"
 import type { MapMarker } from "../maps/leaflet-map"
 import { 
@@ -10,7 +10,7 @@ import {
   Cross, Building2, Pill, Heart, WifiOff, Locate
 } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Button } from "@/frontend/components/ui/button"
+import { Button } from "@/components/ui/button"
 
 // Dynamically import Leaflet map to avoid SSR issues
 const LeafletMap = dynamic(

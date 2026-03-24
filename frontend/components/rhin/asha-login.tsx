@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Language } from "@/frontend/app/page"
+import { Language } from "@/app/page"
 import { ArrowLeft, Shield, WifiOff, Loader2, Delete } from "lucide-react"
 import { cn } from "@/lib/utils"
 

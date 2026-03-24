@@ -1,14 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import { RoleSelector } from "@/frontend/components/rhin/role-selector"
-import { LanguagePicker } from "@/frontend/components/rhin/language-picker"
-import { OTPLogin } from "@/frontend/components/rhin/otp-login"
-import { AshaLogin } from "@/frontend/components/rhin/asha-login"
-import { VillagerApp } from "@/frontend/components/rhin/villager/villager-app"
-import { AshaApp } from "@/frontend/components/rhin/asha/asha-app"
-import { AdminApp } from "@/frontend/components/rhin/admin/admin-app"
-import { DeliveryApp } from "@/frontend/components/rhin/delivery/delivery-app"
+import { RoleSelector } from "@/components/rhin/role-selector"
+import { LanguagePicker } from "@/components/rhin/language-picker"
+import { OTPLogin } from "@/components/rhin/otp-login"
+import { AshaLogin } from "@/components/rhin/asha-login"
+import { VillagerApp } from "@/components/rhin/villager/villager-app"
+import { AshaApp } from "@/components/rhin/asha/asha-app"
+import { AdminApp } from "@/components/rhin/admin/admin-app"
+import { DeliveryApp } from "@/components/rhin/delivery/delivery-app"
 
 export type UserRole = "villager" | "asha" | "admin" | "delivery" | null
 export type Language = "te" | "hi" | "en" | null

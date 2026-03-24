@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { Language } from "@/frontend/app/page"
+import { Language } from "@/app/page"
 import { ReportData } from "./villager-app"
 import { OfflineIndicator } from "../offline-banner"
 import { Mic, MicOff, Keyboard, Phone, Loader2, Heart } from "lucide-react"
@@ -110,7 +110,7 @@ export function VillagerReportPage({ language, isOnline, onReportComplete }: Vil
   const [showTextInput, setShowTextInput] = useState(false)
   const [textInput, setTextInput] = useState("")
   const [recordingTime, setRecordingTime] = useState(0)
-  const timerRef = useRef<NodeJS.Timeout>()
+  const timerRef = useRef<NodeJS.Timeout | null>(null)
 
   // Recording timer
   useEffect(() => {

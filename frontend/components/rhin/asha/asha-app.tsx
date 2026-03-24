@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Language } from "@/frontend/app/page"
+import { Language } from "@/app/page"
 import { OfflineBanner } from "../offline-banner"
 import { AshaDashboard } from "./asha-dashboard"
 import { AshaReportForm } from "./asha-report-form"

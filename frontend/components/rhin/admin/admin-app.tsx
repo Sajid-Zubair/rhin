@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Language } from "@/frontend/app/page"
+import { Language } from "@/app/page"
 import { AdminMap } from "./admin-map"
 import { LogOut, Bell, Settings } from "lucide-react"
 import { cn } from "@/lib/utils"

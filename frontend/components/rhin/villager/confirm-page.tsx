@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Language } from "@/frontend/app/page"
+import { Language } from "@/app/page"
 import { ReportData } from "./villager-app"
 import { 
   User, Calendar, MapPin, AlertCircle, Check, 

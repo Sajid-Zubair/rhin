@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Language } from "@/frontend/app/page"
+import { Language } from "@/app/page"
 import { OfflineBanner } from "../offline-banner"
 import { DeliveryOrders } from "./delivery-orders"
 import { OfflineStatusScreen } from "./offline-status-screen"
@@ -28,7 +28,7 @@ export function DeliveryApp({ language, isOnline, onOnlineChange, onLogout }: De
     if (showOfflineScreen) {
       return (
         <OfflineStatusScreen
-          language={language}
+          language={language || "en"}
           pendingCount={pendingCount}
           onRetry={() => {
             // Simulate reconnection attempt
@@ -40,7 +40,7 @@ export function DeliveryApp({ language, isOnline, onOnlineChange, onLogout }: De
 
     return (
       <DeliveryOrders
-        language={language}
+        language={language || "en"}
         isOnline={isOnline}
       />
     )

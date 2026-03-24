@@ -1,6 +1,6 @@
 "use client"
 
-import { Language } from "@/frontend/app/page"
+import { Language } from "@/app/page"
 import { Phone, Ambulance, Heart, Shield, Building2, WifiOff } from "lucide-react"
 import { cn } from "@/lib/utils"
 

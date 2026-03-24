@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useCallback } from "react"
 import dynamic from "next/dynamic"
-import { Language } from "@/frontend/app/page"
+import { Language } from "@/app/page"
 import type { MapMarker } from "../maps/leaflet-map"
 import { 
   AlertTriangle, Clock, Send, X, MapPin, 
@@ -10,9 +10,9 @@ import {
   Activity, Bell
 } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Button } from "@/frontend/components/ui/button"
-import { Badge } from "@/frontend/components/ui/badge"
-import { Card, CardContent, CardHeader, CardTitle } from "@/frontend/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 // Dynamically import Leaflet map to avoid SSR issues
 const LeafletMap = dynamic(
@@ -208,7 +208,7 @@ const alerts: Alert[] = villageData
   .map(v => ({
     id: v.id,
     village: v.name,
-    tier: v.riskScore >= 70 ? "critical" : v.riskScore >= 50 ? "high" : "moderate",
+    tier: (v.riskScore >= 70 ? "critical" : v.riskScore >= 50 ? "high" : "moderate") as Alert["tier"],
     caseCount: v.totalCases,
     symptoms: v.symptoms.map(s => s.name),
     countdown: v.riskScore >= 70 ? 45 : v.riskScore >= 50 ? 120 : 240,
@@ -217,7 +217,7 @@ const alerts: Alert[] = villageData
     timeAgo: v.riskScore >= 70 ? "8 min ago" : v.riskScore >= 50 ? "32 min ago" : "1 hour ago",
   }))
   .sort((a, b) => {
-    const tierOrder = { critical: 0, high: 1, moderate: 2, low: 3 }
+    const tierOrder: Record<Alert["tier"], number> = { critical: 0, high: 1, moderate: 2, low: 3 }
     return tierOrder[a.tier] - tierOrder[b.tier]
   })
 

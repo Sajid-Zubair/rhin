@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Language } from "@/frontend/app/page"
+import { Language } from "@/app/page"
 import { OfflineIndicator } from "../offline-banner"
 import { 
   Package, MapPin, Navigation, Check, Clock, 

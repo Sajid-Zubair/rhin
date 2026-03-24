@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Language } from "@/frontend/app/page"
+import { Language } from "@/app/page"
 import { 
   Thermometer, Droplets, Frown, Sparkles, Wind, HelpCircle,
   ArrowLeft, ArrowRight, Check, MapPin, Navigation, Loader2, WifiOff

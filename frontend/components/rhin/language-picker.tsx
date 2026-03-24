@@ -1,6 +1,6 @@
 "use client"
 
-import { Language } from "@/frontend/app/page"
+import { Language } from "@/app/page"
 import { ArrowLeft, Check } from "lucide-react"
 import { cn } from "@/lib/utils"
 

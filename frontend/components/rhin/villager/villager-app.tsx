@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Language } from "@/frontend/app/page"
+import { Language } from "@/app/page"
 import { OfflineBanner } from "../offline-banner"
 import { VillagerReportPage } from "./villager-report"
 import { ConfirmPage } from "./confirm-page"

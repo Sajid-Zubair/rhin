@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { Language, UserRole } from "@/frontend/app/page"
+import { Language, UserRole } from "@/app/page"
 import { ArrowLeft, Phone, Loader2 } from "lucide-react"
 import { cn } from "@/lib/utils"
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { UserRole } from "@/frontend/app/page"
+import { UserRole } from "@/app/page"
 import { Users, Heart, LayoutDashboard, Truck } from "lucide-react"
 import { cn } from "@/lib/utils"
 

@@ -1,6 +1,6 @@
 "use client"
 
-import { Language } from "@/frontend/app/page"
+import { Language } from "@/app/page"
 import { OfflineIndicator } from "../offline-banner"
 import { 
   AlertTriangle, MapPin, Calendar, ChevronRight, 
