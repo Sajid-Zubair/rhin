@@ -29,6 +29,10 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [],
 }
 
+CORS_ALLOWED_ORIGINS = [
+    "https://rhin-bvrit.vercel.app",
+]
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
