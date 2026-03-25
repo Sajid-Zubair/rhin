@@ -133,3 +133,137 @@ class CreateHealthReportView(APIView):
         print("❌ Errors:", serializer.errors)  # ✅ debug
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+
+import requests  # add this at top if not already
+
+class StartAICallView(APIView):
+    authentication_classes = []
+    permission_classes = []
+
+    def post(self, request):
+        phone = request.data.get("phone")
+
+        try:
+            res = requests.post(
+                "https://api.voicegenie.ai/call",  # confirm from dashboard
+                json={
+                    "phone_number": phone,
+                    "agent_id": settings.VOICEGENIE_AGENT_ID
+                },
+                headers={
+                    "Authorization": f"Bearer {settings.VOICEGENIE_API_KEY}"
+                }
+            )
+
+            return Response({
+                "message": "Call initiated",
+                "data": res.json()
+            })
+
+        except Exception as e:
+            return Response({"error": str(e)}, status=500)
+
+
+class VoiceAgentWebhook(APIView):
+    authentication_classes = []
+    permission_classes = []
+
+    def post(self, request):
+        print("📩 Webhook hit:", request.data)
+
+        user_input = request.data.get("speech", "")
+        call_id = request.data.get("call_id")
+
+        reply = self.handle_conversation(user_input)
+
+        return Response({
+            "response": reply
+        })
+
+    def handle_conversation(self, text):
+        text = text.lower()
+
+        if "hello" in text or "hi" in text:
+            return "नमस्ते! मैं आपकी सहायता के लिए यहाँ हूँ।"
+
+        if "report" in text:
+            return "क्या आप अपनी हेल्थ रिपोर्ट दर्ज करना चाहते हैं?"
+
+        return "कृपया थोड़ा और स्पष्ट बताइए।"
+    
+
+
+
+import json
+from django.http import JsonResponse
+from django.views import View
+from .models import Order
+
+
+class ReceiveOrderView(View):
+
+    # 🔴 CREATE ORDER
+    def post(self, request):
+        try:
+            data = json.loads(request.body)
+
+            items = data.get("items")
+            total = data.get("total")
+            lat = data.get("latitude")
+            lng = data.get("longitude")
+
+            order = Order.objects.create(
+                items=items,
+                total=total,
+                latitude=lat,
+                longitude=lng
+            )
+
+            return JsonResponse({
+                "status": "success",
+                "order_id": order.id
+            })
+
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=400)
+
+    # 🟢 GET ORDERS
+    def get(self, request):
+        order_id = request.GET.get("id")
+
+        # single order
+        if order_id:
+            try:
+                order = Order.objects.get(id=order_id)
+                return JsonResponse({
+                    "id": order.id,
+                    "items": order.items,
+                    "total": order.total,
+                    "latitude": order.latitude,
+                    "longitude": order.longitude,
+                    "created_at": order.created_at.strftime("%Y-%m-%d %H:%M:%S")
+                })
+            except Order.DoesNotExist:
+                return JsonResponse({"error": "Not found"}, status=404)
+
+        # all orders
+        orders = Order.objects.all().order_by("-created_at")
+
+        data = []
+        for order in orders:
+            data.append({
+                "id": order.id,
+                "items": order.items,
+                "total": order.total,
+                "latitude": order.latitude,
+                "longitude": order.longitude,
+                "created_at": order.created_at.strftime("%Y-%m-%d %H:%M:%S")
+            })
+
+        return JsonResponse({
+            "status": "success",
+            "orders": data
+        })
+

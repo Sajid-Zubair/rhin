@@ -39,6 +39,8 @@ export default function RHINApp() {
 
   // Handle logout - return to role selection
   const handleLogout = () => {
+    localStorage.removeItem("isVerified")
+    localStorage.removeItem("phone")
     setRole(null)
     setLanguage(null)
     setAuthState("role-select")

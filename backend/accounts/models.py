@@ -33,3 +33,16 @@ class HealthReport(models.Model):
         return f"{self.latitude}, {self.longitude} - {self.symptoms}"
     
 
+
+
+class Order(models.Model):
+    items = models.TextField()
+    total = models.IntegerField()
+    latitude = models.FloatField()
+    longitude = models.FloatField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Order {self.id} - Rs.{self.total}"
+    
+

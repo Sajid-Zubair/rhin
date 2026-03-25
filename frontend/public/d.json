@@ -1,0 +1,82 @@
+[
+  {
+    "disease": "Common Cold",
+    "symptoms": ["runny nose", "sneezing", "sore throat", "cough"],
+    "treatment": ["Rest", "Paracetamol", "Antihistamines"]
+  },
+  {
+    "disease": "Influenza",
+    "symptoms": ["fever", "cough", "sore throat", "body aches", "fatigue"],
+    "treatment": ["Rest", "Paracetamol", "Oseltamivir"]
+  },
+  {
+    "disease": "Malaria",
+    "symptoms": ["fever", "chills", "sweating", "headache"],
+    "treatment": ["Chloroquine", "Paracetamol", "Hydration"]
+  },
+  {
+    "disease": "Dengue Fever",
+    "symptoms": ["fever", "headache", "muscle pain", "rash"],
+    "treatment": ["Paracetamol", "Hydration", "Rest"]
+  },
+  {
+    "disease": "Pneumonia",
+    "symptoms": ["fever", "cough", "shortness of breath", "chest pain"],
+    "treatment": ["Amoxicillin", "Paracetamol", "Rest"]
+  },
+  {
+    "disease": "Gastroenteritis",
+    "symptoms": ["diarrhea", "vomiting", "abdominal pain", "dehydration"],
+    "treatment": ["ORS", "Paracetamol", "Hydration"]
+  },
+  {
+    "disease": "Migraine",
+    "symptoms": ["severe headache", "light sensitivity", "nausea"],
+    "treatment": ["Paracetamol", "Ibuprofen", "Rest"]
+  },
+  {
+    "disease": "Food Poisoning",
+    "symptoms": ["vomiting", "diarrhea", "stomach cramps"],
+    "treatment": ["ORS", "Hydration", "Paracetamol"]
+  },
+  {
+    "disease": "Urinary Tract Infection",
+    "symptoms": ["painful urination", "frequent urination", "lower back pain"],
+    "treatment": ["Ciprofloxacin", "Paracetamol", "Hydration"]
+  },
+  {
+    "disease": "Diabetes Mellitus",
+    "symptoms": ["frequent urination", "thirst", "fatigue", "weight loss"],
+    "treatment": ["Metformin", "Insulin", "Diet control"]
+  },
+  {
+    "disease": "Hypertension",
+    "symptoms": ["headache", "dizziness", "blurred vision"],
+    "treatment": ["Amlodipine", "Lifestyle changes", "Diet control"]
+  },
+  {
+    "disease": "Asthma",
+    "symptoms": ["wheezing", "shortness of breath", "chest tightness"],
+    "treatment": ["Albuterol inhaler", "Steroids", "Avoid triggers"]
+  },
+  {
+    "disease": "Bronchitis",
+    "symptoms": ["cough", "sputum", "fatigue", "shortness of breath"],
+    "treatment": ["Amoxicillin", "Paracetamol", "Rest"]
+  },
+  {
+    "disease": "Typhoid Fever",
+    "symptoms": ["fever", "abdominal pain", "diarrhea", "headache"],
+    "treatment": ["Ceftriaxone", "Paracetamol", "Hydration"]
+  },
+  {
+    "disease": "Cholera",
+    "symptoms": ["severe diarrhea", "vomiting", "dehydration"],
+    "treatment": ["ORS", "Doxycycline", "Hydration"]
+  },
+  {
+    "disease": "Hepatitis A",
+    "symptoms": ["fatigue", "jaundice", "abdominal pain", "nausea"],
+    "treatment": ["Rest", "Hydration", "Paracetamol"]
+  }
+]

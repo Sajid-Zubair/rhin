@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Toaster } from "sonner"
+import  AIHealthBot  from '@/components/rhin/AIHealthBot'
 import './globals.css'
 
 const geist = Geist({ 
@@ -58,6 +59,7 @@ export default function RootLayout({
       <body className="font-sans antialiased min-h-screen bg-background text-foreground">
         {children}
         <Toaster position="top-center" />
+        <AIHealthBot />
         <Analytics />
       </body>
     </html>

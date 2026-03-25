@@ -69,6 +69,14 @@ export function OTPLogin({ role, language, onSuccess, onBack }: OTPLoginProps) {
     }
   }, [countdown])
 
+  useEffect(() => {
+    const isVerified = localStorage.getItem("isVerified")
+
+    if (isVerified === "true") {
+      onSuccess()
+    }
+  }, [])
+
   const handleSendOtp = async () => {
   if (phone.length < 10) return
 
@@ -131,6 +139,10 @@ export function OTPLogin({ role, language, onSuccess, onBack }: OTPLoginProps) {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000))
     setIsLoading(false)
+
+    localStorage.setItem("isVerified", "true")
+    localStorage.setItem("phone", phone)
+
     onSuccess()
   }
 
